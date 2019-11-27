@@ -33,6 +33,7 @@ public final class HelperClass {
           Pokemon pokemon = new Pokemon();
         try {
             JSONObject jsonObject = new JSONObject(jsonResponse);
+            pokemon.setBaseExperience(Integer.valueOf(jsonObject.getInt("base_experience")));
             pokemon.setWeight(Integer.valueOf(jsonObject.getInt("weight")));
             pokemon.setName(jsonObject.getString("name"));
         } catch (JSONException e) {

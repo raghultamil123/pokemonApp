@@ -32,9 +32,11 @@ public class PokemonInfoAdapter extends ArrayAdapter {
         }
         Pokemon currentPokemon = pokemonInfos.get(position);
         TextView nameView = (TextView)listView.findViewById(R.id.pokemonName);
-        nameView.setText(currentPokemon.getName());
+        nameView.setText(currentPokemon.getName().toUpperCase());
         TextView weightView = (TextView)listView.findViewById(R.id.pokemonWeight);
-        weightView.setText(""+currentPokemon.getWeight());
+        TextView experienceView = (TextView) listView.findViewById(R.id.pokemonBaseExperience);
+        experienceView.setText(String.valueOf(currentPokemon.getBaseExperience()));
+        weightView.setText(String.valueOf(currentPokemon.getWeight()));
         return listView;
 
 

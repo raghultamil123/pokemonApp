@@ -4,6 +4,7 @@ public class Pokemon {
 
     private Integer weight;
     private String name;
+    private Integer baseExperience;
 
     public Integer getWeight() {
         return weight;
@@ -21,6 +22,11 @@ public class Pokemon {
         this.name = name;
     }
 
+    public Integer getBaseExperience() {
+        return baseExperience;
+    }
 
-
+    public void setBaseExperience(Integer baseExperience) {
+        this.baseExperience = baseExperience;
+    }
 }
