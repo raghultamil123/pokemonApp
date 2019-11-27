@@ -1,4 +1,6 @@
-package com.example.pokemonapp;
+package com.example.pokemonapp.Helper;
+
+import com.example.pokemonapp.DTO.Pokemon;
 
 import org.json.JSONException;
 import org.json.JSONObject;

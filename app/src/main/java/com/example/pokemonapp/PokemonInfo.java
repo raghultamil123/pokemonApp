@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.pokemonapp.Adapter.PokemonInfoAdapter;
+import com.example.pokemonapp.DTO.Pokemon;
+import com.example.pokemonapp.Loader.PokemonLoader;
+
 import java.util.ArrayList;
 import java.util.List;
 

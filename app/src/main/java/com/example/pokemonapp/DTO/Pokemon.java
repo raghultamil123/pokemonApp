@@ -1,4 +1,4 @@
-package com.example.pokemonapp;
+package com.example.pokemonapp.DTO;
 
 public class Pokemon {
 
