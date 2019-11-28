@@ -1,10 +1,13 @@
 package com.example.pokemonapp.DTO;
 
+import java.util.List;
+
 public class Pokemon {
 
     private Integer weight;
     private String name;
     private Integer baseExperience;
+    private List<Result> moves;
 
     public Integer getWeight() {
         return weight;

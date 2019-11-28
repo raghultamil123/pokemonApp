@@ -1,7 +1,9 @@
 package com.example.pokemonapp.Helper;
 
 import com.example.pokemonapp.DTO.Pokemon;
+import com.example.pokemonapp.DTO.Result;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,6 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 
 public final class HelperClass {
 
@@ -31,11 +35,21 @@ public final class HelperClass {
 
     private static Pokemon resultFromJsonResponse(String jsonResponse) {
           Pokemon pokemon = new Pokemon();
+        List<Result> moves = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(jsonResponse);
             pokemon.setBaseExperience(Integer.valueOf(jsonObject.getInt("base_experience")));
             pokemon.setWeight(Integer.valueOf(jsonObject.getInt("weight")));
             pokemon.setName(jsonObject.getString("name"));
+            JSONArray movesArray = jsonObject.getJSONArray("moves");
+            for(int i = 0;i<movesArray.length();i++){
+                Result result = new Result();
+             JSONObject moveObject = (JSONObject) movesArray.getJSONObject(i).get("move");
+           result.setName(  moveObject.getString("name"));
+            result.setUrl( moveObject.getString("url"));
+            moves.add(result);
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
