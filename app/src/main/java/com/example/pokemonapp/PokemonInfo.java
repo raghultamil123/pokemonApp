@@ -7,6 +7,7 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,8 +31,11 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
 
         pokemons = new ArrayList<>();
         pokemonInfoAdapter = new PokemonInfoAdapter(this,pokemons);
+
         ListView listView = findViewById(R.id.resultList);
         listView.setAdapter(pokemonInfoAdapter);
+        View emptyView = findViewById(R.id.empty_view);
+        listView.setEmptyView(emptyView);
         getSupportLoaderManager().initLoader(1,null,this).forceLoad();
 
 
