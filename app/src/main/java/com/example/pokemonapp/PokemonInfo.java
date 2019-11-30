@@ -31,7 +31,7 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
 
         pokemons = new ArrayList<>();
         pokemonInfoAdapter = new PokemonInfoAdapter(this,pokemons);
-
+        setTitle("PokemonInfo");
         ListView listView = findViewById(R.id.resultList);
         listView.setAdapter(pokemonInfoAdapter);
         View emptyView = findViewById(R.id.empty_view);

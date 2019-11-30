@@ -34,6 +34,7 @@ public class PokemonLoader extends AsyncTaskLoader<List<Pokemon>> {
         pokemonInfoUrl.add("https://pokeapi.co/api/v2/pokemon/30");
         pokemonInfoUrl.add("https://pokeapi.co/api/v2/pokemon/35");
         pokemonInfoUrl.add("https://pokeapi.co/api/v2/pokemon/42");
+        pokemonInfoUrl.add("https://pokeapi.co/api/v2/pokemon/48");
         for(String url:pokemonInfoUrl){
       Pokemon pokemon= HelperClass.fetchFromUrl(url);
       pokemons.add(pokemon);
