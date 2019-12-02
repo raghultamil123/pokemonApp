@@ -16,6 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-medium"
+            android:textAppearance="?textAppearanceListItem"
             android:textSize="20sp" />
 
         <TextView
@@ -23,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
+            android:textAppearance="?textAppearanceListItemSmall"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
     </LinearLayout>
@@ -38,9 +40,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="51dp"
                 android:layout_gravity="right"
+                android:gravity="center"
+
+                android:background="@drawable/magnitude_circle"
                 android:text="hello"
 
-                android:textColor="@android:color/holo_green_dark" />
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
 </LinearLayout>
