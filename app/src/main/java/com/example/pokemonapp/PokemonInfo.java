@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -37,6 +39,14 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
         View emptyView = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyView);
         getSupportLoaderManager().initLoader(1,null,this).forceLoad();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(PokemonInfo.this,PokemonDetails.class);
+                intent.putExtra("Pokemon",pokemons.get(position));
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -51,6 +61,7 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
     public void onLoadFinished(@NonNull Loader<List<Pokemon>> loader, List<Pokemon> data) {
 
      pokemonInfoAdapter.clear();
+     pokemons.addAll(data);
      pokemonInfoAdapter.addAll(data);
 
     }
