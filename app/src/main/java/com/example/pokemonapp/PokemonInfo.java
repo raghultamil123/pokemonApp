@@ -6,12 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.pokemonapp.Adapter.PokemonInfoAdapter;
 import com.example.pokemonapp.DTO.Pokemon;
@@ -38,15 +42,27 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
         listView.setAdapter(pokemonInfoAdapter);
         View emptyView = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyView);
-        getSupportLoaderManager().initLoader(1,null,this).forceLoad();
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(PokemonInfo.this,PokemonDetails.class);
-                intent.putExtra("Pokemon",pokemons.get(position));
-                startActivity(intent);
-            }
-        });
+        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        if(networkInfo!=null && networkInfo.isConnected()) {
+
+            Toast.makeText(this,"connected via "+networkInfo.getTypeName(),Toast.LENGTH_LONG).show();
+            getSupportLoaderManager().initLoader(1, null, this).forceLoad();
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Intent intent = new Intent(PokemonInfo.this, PokemonDetails.class);
+                    intent.putExtra("Pokemon", pokemons.get(position));
+                    startActivity(intent);
+                }
+            });
+        }
+        else{
+            TextView view = (TextView)findViewById(R.id.empty_view);
+            view.setText("No internet connection");
+            listView.setEmptyView(view);
+        }
 
 
     }
@@ -59,9 +75,9 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
 
     @Override
     public void onLoadFinished(@NonNull Loader<List<Pokemon>> loader, List<Pokemon> data) {
-
-     pokemonInfoAdapter.clear();
      pokemons.addAll(data);
+     pokemonInfoAdapter.clear();
+
      pokemonInfoAdapter.addAll(data);
 
     }
