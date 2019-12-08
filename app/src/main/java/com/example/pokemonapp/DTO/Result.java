@@ -1,6 +1,8 @@
 package com.example.pokemonapp.DTO;
 
-public class Result {
+import java.io.Serializable;
+
+public class Result implements Serializable {
     private String name;
     private String url;
 

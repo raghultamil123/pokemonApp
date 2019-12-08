@@ -8,6 +8,7 @@ public class Pokemon implements Serializable {
     private Integer weight;
     private String name;
     private Integer baseExperience;
+    private Integer height;
     private List<Result> moves;
 
 
@@ -33,5 +34,21 @@ public class Pokemon implements Serializable {
 
     public void setBaseExperience(Integer baseExperience) {
         this.baseExperience = baseExperience;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public List<Result> getMoves() {
+        return moves;
+    }
+
+    public void setMoves(List<Result> moves) {
+        this.moves = moves;
     }
 }

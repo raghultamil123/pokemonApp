@@ -21,6 +21,8 @@ public class PokemonDetails extends AppCompatActivity {
         weightView.setText(pokemon.getWeight().toString());
         TextView experienceView = (TextView)findViewById(R.id.pokemon_base_experience);
         experienceView.setText(pokemon.getBaseExperience().toString());
+        TextView heightView = (TextView)findViewById(R.id.pokemon_height);
+        heightView.setText(pokemon.getHeight().toString());
 
     }
 }

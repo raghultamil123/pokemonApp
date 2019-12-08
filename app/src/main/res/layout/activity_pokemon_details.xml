@@ -51,6 +51,25 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/pokemon_height_header"
+                android:textSize="16dp"
+                android:textStyle= "bold"
+                android:gravity="center_horizontal"
+                android:text="Height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/pokemon_height"
+                android:textSize="32dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
                 android:id="@+id/pokemon_base_experience_header"
                 android:textSize="16dp"
                 android:textStyle= "bold"

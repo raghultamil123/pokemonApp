@@ -40,6 +40,7 @@ public final class HelperClass {
             JSONObject jsonObject = new JSONObject(jsonResponse);
             pokemon.setBaseExperience(Integer.valueOf(jsonObject.getInt("base_experience")));
             pokemon.setWeight(Integer.valueOf(jsonObject.getInt("weight")));
+            pokemon.setHeight(Integer.valueOf(jsonObject.getInt("height")));
             pokemon.setName(jsonObject.getString("name"));
             JSONArray movesArray = jsonObject.getJSONArray("moves");
             for(int i = 0;i<movesArray.length();i++){
@@ -49,7 +50,7 @@ public final class HelperClass {
             result.setUrl( moveObject.getString("url"));
             moves.add(result);
             }
-
+           pokemon.setMoves(moves);
         } catch (JSONException e) {
             e.printStackTrace();
         }
