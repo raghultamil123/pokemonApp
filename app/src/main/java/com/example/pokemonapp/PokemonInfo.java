@@ -3,9 +3,14 @@ package com.example.pokemonapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -47,7 +52,8 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
 
         if(networkInfo!=null && networkInfo.isConnected()) {
 
-            Toast.makeText(this,"connected via "+networkInfo.getTypeName(),Toast.LENGTH_LONG).show();
+           // Toast.makeText(this,"connected via "+networkInfo.getTypeName(),Toast.LENGTH_LONG).show();
+            createNotification("Connected via "+networkInfo.getTypeName().toLowerCase());
             getSupportLoaderManager().initLoader(1, null, this).forceLoad();
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -59,12 +65,37 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
             });
         }
         else{
+            createNotification("No internet connection");
             TextView view = (TextView)findViewById(R.id.empty_view);
             view.setText("No internet connection");
             listView.setEmptyView(view);
         }
 
 
+    }
+
+    private void createNotification(String connectionText) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel("netowork" ,"internet_connection", NotificationManager.IMPORTANCE_HIGH);
+            notificationChannel.enableLights(true);
+            notificationChannel.enableVibration(true);
+            notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
+           Intent intent =new Intent(this,PokemonInfo.class);
+           intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(notificationChannel);
+            NotificationCompat.Builder notification = new NotificationCompat.Builder(this, "netowork")
+                    .setContentTitle("Connection")
+                    .setContentText(connectionText)
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
+                    .setSmallIcon(R.mipmap.ic_launcher_round);
+
+
+            notificationManager.notify(1, notification.build());
+
+        }
     }
 
     @NonNull
