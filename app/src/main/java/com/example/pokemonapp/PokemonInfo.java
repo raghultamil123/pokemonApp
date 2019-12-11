@@ -10,10 +10,8 @@ import androidx.loader.content.Loader;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -25,7 +23,6 @@ import android.widget.Toast;
 import com.example.pokemonapp.Adapter.PokemonInfoAdapter;
 import com.example.pokemonapp.DTO.Pokemon;
 import com.example.pokemonapp.Helper.ConnectionHelper;
-import com.example.pokemonapp.Helper.HelperClass;
 import com.example.pokemonapp.Loader.PokemonLoader;
 
 import java.lang.ref.WeakReference;
@@ -53,11 +50,9 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
         listView.setAdapter(pokemonInfoAdapter);
         View emptyView = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyView);
-        ConnectionHelper.getConnectionInfo(getApplicationContext());
-        ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        NetworkInfo networkInfo = ConnectionHelper.getConnectionInfo(getApplicationContext());
 
-        if(ConnectionHelper.getConnectionInfo(getApplicationContext())!=null &&ConnectionHelper.getConnectionInfo(getApplicationContext()).isConnected()) {
+        if(networkInfo!=null && networkInfo.isConnected()) {
 
            // Toast.makeText(this,"connected via "+networkInfo.getTypeName(),Toast.LENGTH_LONG).show();
             createNotification("Connected via "+networkInfo.getTypeName().toLowerCase());

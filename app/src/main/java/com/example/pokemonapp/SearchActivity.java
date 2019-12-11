@@ -23,7 +23,7 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
 
     Pokemon pokemon;
     Spinner spinner;
-    String search;
+    String search="";
      String [] value = {"ditto","bulbasaur","voltorb"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,7 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
      @NonNull
      @Override
      public Loader<Pokemon> onCreateLoader(int id, @Nullable Bundle args) {
-        String search="";
+
         if(args!=null){
             search = args.getString("search");
         }
