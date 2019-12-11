@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import com.example.pokemonapp.Adapter.PokemonInfoAdapter;
 import com.example.pokemonapp.DTO.Pokemon;
+import com.example.pokemonapp.Helper.ConnectionHelper;
+import com.example.pokemonapp.Helper.HelperClass;
 import com.example.pokemonapp.Loader.PokemonLoader;
 
 import java.lang.ref.WeakReference;
@@ -51,10 +53,11 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
         listView.setAdapter(pokemonInfoAdapter);
         View emptyView = findViewById(R.id.empty_view);
         listView.setEmptyView(emptyView);
+        ConnectionHelper.getConnectionInfo(getApplicationContext());
         ConnectivityManager connectivityManager = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
 
-        if(networkInfo!=null && networkInfo.isConnected()) {
+        if(ConnectionHelper.getConnectionInfo(getApplicationContext())!=null &&ConnectionHelper.getConnectionInfo(getApplicationContext()).isConnected()) {
 
            // Toast.makeText(this,"connected via "+networkInfo.getTypeName(),Toast.LENGTH_LONG).show();
             createNotification("Connected via "+networkInfo.getTypeName().toLowerCase());

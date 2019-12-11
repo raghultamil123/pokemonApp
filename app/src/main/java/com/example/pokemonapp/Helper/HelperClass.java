@@ -21,14 +21,14 @@ import java.util.List;
 public final class HelperClass {
 
 
-    private static final String url="https://pokeapi.co/api/v2/pokemon/1/";
+
      public static Pokemon fetchFromUrl(String urlString){
 
          URL  url= createUrl(urlString);
          String jsonResponse = "";
          jsonResponse = makeHttpRequest(url);
          Pokemon pokemon = resultFromJsonResponse(jsonResponse);
-         System.out.println(pokemon.getWeight());
+
          return pokemon;
 
      }
