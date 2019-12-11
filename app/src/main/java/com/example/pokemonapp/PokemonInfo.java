@@ -26,6 +26,7 @@ import com.example.pokemonapp.Adapter.PokemonInfoAdapter;
 import com.example.pokemonapp.DTO.Pokemon;
 import com.example.pokemonapp.Loader.PokemonLoader;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,15 +35,18 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
     TextView textView;
     PokemonInfoAdapter pokemonInfoAdapter;
     List<Pokemon> pokemons;
-
+   public NotificationManager notificationManager;
+  public  NotificationChannel notificationChannel;
+  public  NotificationCompat.Builder notification = new NotificationCompat.Builder(this, "netowork");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_info);
-
+        PokemonLoader.mActivity = new WeakReference<PokemonInfo>(this);
         pokemons = new ArrayList<>();
         pokemonInfoAdapter = new PokemonInfoAdapter(this,pokemons);
         setTitle("PokemonInfo");
+        NotificationCompat.Builder notification = new NotificationCompat.Builder(this, "netowork");
         ListView listView = findViewById(R.id.resultList);
         listView.setAdapter(pokemonInfoAdapter);
         View emptyView = findViewById(R.id.empty_view);
@@ -76,24 +80,28 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
 
     private void createNotification(String connectionText) {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel notificationChannel = new NotificationChannel("netowork" ,"internet_connection", NotificationManager.IMPORTANCE_HIGH);
+             notificationChannel = new NotificationChannel("netowork" ,"internet_connection", NotificationManager.IMPORTANCE_HIGH);
             notificationChannel.enableLights(true);
             notificationChannel.enableVibration(true);
             notificationChannel.setLockscreenVisibility(Notification.VISIBILITY_PUBLIC);
            Intent intent =new Intent(this,PokemonInfo.class);
-           intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
-            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+           //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+          //  PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,0);
+             notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(notificationChannel);
-            NotificationCompat.Builder notification = new NotificationCompat.Builder(this, "netowork")
+             notification = new NotificationCompat.Builder(this, "netowork")
                     .setContentTitle("Connection")
                     .setContentText(connectionText)
-                    .setContentIntent(pendingIntent)
+                   // .setContentIntent(pendingIntent)
                     .setAutoCancel(true)
                     .setSmallIcon(R.mipmap.ic_launcher_round);
-
-
+       /*     int progressMax = 100;
+            int progressMin = 0;
+            notification.setProgress(progressMax,progressMin,false);*/
             notificationManager.notify(1, notification.build());
+           // notification.setContentText("completed").setProgress(0,0,false);
+
+
 
         }
     }
@@ -101,11 +109,14 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
     @NonNull
     @Override
     public Loader<List<Pokemon>> onCreateLoader(int id, @Nullable Bundle args) {
+        createNotification("Fetching records from server Please Wait...");
         return new PokemonLoader(this);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<List<Pokemon>> loader, List<Pokemon> data) {
+        notification.setContentText("Completed Thanks for your cooperation").setProgress(0,0,false);
+        notificationManager.notify(1, notification.build());
      pokemons.addAll(data);
      pokemonInfoAdapter.clear();
 
@@ -117,4 +128,5 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
     public void onLoaderReset(@NonNull Loader<List<Pokemon>> loader) {
 
     }
+
 }
