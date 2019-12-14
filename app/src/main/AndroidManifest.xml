@@ -20,6 +20,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name=".scheduler.PokemonDataService"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+
+        </service>
+        <provider
+            android:authorities="com.example.pokemonapp"
+            android:name=".data.PokemonDataProvider"
+            android:exported="false"/>
     </application>
 
 </manifest>

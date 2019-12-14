@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,10 @@ import android.widget.Spinner;
 import com.example.pokemonapp.DTO.Pokemon;
 import com.example.pokemonapp.Helper.ConnectionHelper;
 import com.example.pokemonapp.Loader.PokemonSeachLoader;
+import com.example.pokemonapp.data.PokemonContract;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Pokemon>
  {
@@ -25,19 +31,24 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
     Spinner spinner;
     String search="";
      String [] value = {"ditto","bulbasaur","voltorb"};
+     List<String> pokemonValues = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setTitle("Search");
-
+      //  ContentValues values = new ContentValues();
+       /* values.put(PokemonContract.PokemonNameEntry.ID,4);
+        values.put(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_NAME,"charmander");
+        values.put(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_URL,"https://pokeapi.co/api/v2/pokemon/4/");
+         getContentResolver().insert(PokemonContract.PokemonNameEntry.CONTENT_URI,values);*/
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                search = value[position];
+                search = pokemonValues.get(position);
                Bundle bundle = new Bundle();
                bundle.putString("search",search);
                 NetworkInfo networkInfo = ConnectionHelper.getConnectionInfo(getApplicationContext());
@@ -52,7 +63,14 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
 
             }
         });
-        ArrayAdapter adap = new ArrayAdapter(this,android.R.layout.simple_spinner_item,value);
+        Cursor cursor = getContentResolver().query(PokemonContract.PokemonNameEntry.CONTENT_URI,null,null,null,null);
+
+        while(cursor.moveToNext()) {
+           String pokemonName =  cursor.getString(cursor.getColumnIndexOrThrow(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_NAME));
+           System.out.println(pokemonName);
+           pokemonValues.add(pokemonName);
+        }
+        ArrayAdapter adap = new ArrayAdapter(this,android.R.layout.simple_spinner_item,pokemonValues);
         adap.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adap);
 
