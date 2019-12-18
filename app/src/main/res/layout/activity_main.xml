@@ -28,4 +28,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pokemonInfo" />
+
+    <Button
+        android:id="@+id/pokemonSync"
+        android:layout_width="468dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/holo_green_dark"
+        android:text="@string/pokemon_sync"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pokemonSearch" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

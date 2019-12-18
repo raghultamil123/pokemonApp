@@ -75,7 +75,9 @@ public class PokemonDataProvider extends ContentProvider {
 
     @Override
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
-        return 0;
+        SQLiteDatabase sqLiteDatabase = pokemonDataHelper.getWritableDatabase();
+       int id = sqLiteDatabase.delete(PokemonNameEntry.TABLE_NAME,null,null);
+        return id;
     }
 
     @Override

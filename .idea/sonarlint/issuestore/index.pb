@@ -7,3 +7,23 @@ i
 9app/src/main/java/com/example/pokemonapp/PokemonInfo.java,c\9\c9faed6335e280cadd59db93150075606c71f0e5
 l
 <app/src/main/java/com/example/pokemonapp/SearchActivity.java,8\b\8b7b562bcbedd7b0c77defc4dfc253767771306e
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
+t
+Dapp/src/main/java/com/example/pokemonapp/data/PokemonDataHelper.java,f\6\f6ade0c7056bf7b793db0caedbab2a2199ad76fd
+r
+Bapp/src/main/java/com/example/pokemonapp/data/PokemonContract.java,7\3\73c1b1cefa19b61723bcae8e80d677e51a3cb821
+p
+@app/src/main/java/com/example/pokemonapp/Helper/HelperClass.java,b\d\bd5518d04d332331f5ac90e0653d87e01641540e
+r
+Bapp/src/main/java/com/example/pokemonapp/Loader/PokemonLoader.java,9\0\902c75d08fad1a809991152b914821abb5d7d772
+v
+Fapp/src/main/java/com/example/pokemonapp/data/PokemonDataProvider.java,5\d\5d8562092aea7da92ec2862c5f3f1a4daff94a70
+|
+Lapp/src/androidTest/java/com/example/pokemonapp/ExampleInstrumentedTest.java,0\1\0196124ccb1c5afb4c5c7563ea2c9e3415c449df
+z
+Japp/src/main/java/com/example/pokemonapp/scheduler/PokemonDataService.java,8\4\84758b6e35b31341f35b39702fb4802d89a52b06
+u
+Eapp/src/main/java/com/example/pokemonapp/Helper/ConnectionHelper.java,f\3\f3629caf05ae7b330d056b8df853223c6da16867
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e

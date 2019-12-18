@@ -1,4 +1,9 @@
 
-gsquid:CallToDeprecatedMethod-"?Remove this use of "getSupportLoaderManager"; it is deprecated.(‡Áå¹
-squid:S11863"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ
-squid:S1186O"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒİ¹éÿÿÿÿÿ
+squid:S1186>"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ
+[
+squid:S106C"9Replace this use of System.out or System.err by a logger.(·±¨¨ùÿÿÿÿ8£Ã²¨ñ-
+squid:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒİ¹éÿÿÿÿÿ
+V
+squid:S106F"9Replace this use of System.out or System.err by a logger.(¨ıÏ8üÌ”§ñ-
+gsquid:CallToDeprecatedMethod8"?Remove this use of "getSupportLoaderManager"; it is deprecated.(‡Áå¹
+nsquid:CommentedOutCodeLine)"<This block of commented-out lines of code should be removed.(‡ºÙùÿÿÿÿ8µ·Â¨ñ-

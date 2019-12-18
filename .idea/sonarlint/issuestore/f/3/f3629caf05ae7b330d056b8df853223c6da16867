@@ -1,0 +1,5 @@
+
+zsquid:S1488"cImmediately return this expression instead of assigning it to the temporary variable "networkInfo".(ÿ»¶Ã
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤²Èãÿÿÿÿÿ
+Gsquid:UselessImportCheck"Remove this duplicated import.(«¸”ýøÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(ÁËØÿøÿÿÿÿ

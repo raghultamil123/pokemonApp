@@ -1,0 +1,11 @@
+
+Rsquid:S1444
+"6Make this "public static DATABASE_VERSION" field final(¾ô¾úÿÿÿÿ
+Osquid:S1444"3Make this "public static DATABASE_NAME" field final(‘öÅûûÿÿÿÿ
+"squid:ClassVariableVisibilityCheck
+"\Make DATABASE_VERSION a static final constant or non-public and provide accessors if needed.(¾ô¾úÿÿÿÿ
+Œ"squid:ClassVariableVisibilityCheck"YMake DATABASE_NAME a static final constant or non-public and provide accessors if needed.(‘öÅûûÿÿÿÿ
+wsquid:S3008
+"[Rename this field "DATABASE_VERSION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾ô¾úÿÿÿÿ
+tsquid:S3008"XRename this field "DATABASE_NAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘öÅûûÿÿÿÿ
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÄÜ»ûÿÿÿÿ

@@ -1,0 +1,7 @@
+
+{squid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "pokemon".(²øŸõÿÿÿÿÿ
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤²Èãÿÿÿÿÿ
+?squid:S1148A"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+?squid:S1148b"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(ÙØÇËúÿÿÿÿ
+Vsquid:S4719G":Replace Charset.forName() call with StandardCharsets.UTF_8(Þˆ¤Öúÿÿÿÿ

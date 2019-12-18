@@ -27,7 +27,7 @@
         <provider
             android:authorities="com.example.pokemonapp"
             android:name=".data.PokemonDataProvider"
-            android:exported="false"/>
+            android:exported="true"/>
     </application>
 
 </manifest>

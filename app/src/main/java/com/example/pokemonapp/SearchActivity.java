@@ -38,16 +38,15 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setTitle("Search");
-      //  ContentValues values = new ContentValues();
-       /* values.put(PokemonContract.PokemonNameEntry.ID,4);
-        values.put(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_NAME,"charmander");
-        values.put(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_URL,"https://pokeapi.co/api/v2/pokemon/4/");
+       /* ContentValues values = new ContentValues();
+        values.put(PokemonContract.PokemonNameEntry.ID,1);
+        values.put(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_NAME,"bulbasaur");
+        values.put(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_URL,"https://pokeapi.co/api/v2/pokemon/1/");
          getContentResolver().insert(PokemonContract.PokemonNameEntry.CONTENT_URI,values);*/
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
                 search = pokemonValues.get(position);
                Bundle bundle = new Bundle();
                bundle.putString("search",search);
@@ -64,7 +63,7 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
             }
         });
         Cursor cursor = getContentResolver().query(PokemonContract.PokemonNameEntry.CONTENT_URI,null,null,null,null);
-
+        System.out.println("gayu da"+cursor.getCount());
         while(cursor.moveToNext()) {
            String pokemonName =  cursor.getString(cursor.getColumnIndexOrThrow(PokemonContract.PokemonNameEntry.COLUMN_POKEMON_NAME));
            System.out.println(pokemonName);

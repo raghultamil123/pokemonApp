@@ -2,6 +2,7 @@ package com.example.pokemonapp.Helper;
 
 import com.example.pokemonapp.DTO.Pokemon;
 import com.example.pokemonapp.DTO.Result;
+import com.example.pokemonapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,7 +22,15 @@ import java.util.List;
 public final class HelperClass {
 
 
+      public static List<Result> fetchPokemonName(String urlString){
+          URL url = createUrl(urlString);
+          String jsonResponse="";
+          jsonResponse = makeHttpRequest(url);
+          List<Result> results = pokemonNameFetch(jsonResponse);
+          return results;
 
+
+      }
      public static Pokemon fetchFromUrl(String urlString){
 
          URL  url= createUrl(urlString);
@@ -31,6 +40,24 @@ public final class HelperClass {
 
          return pokemon;
 
+     }
+     private static List<Result> pokemonNameFetch(String jsonResponse){
+         List<Result> results = new ArrayList<>();
+         try {
+
+             JSONObject obj = new JSONObject(jsonResponse);
+           JSONArray jsonArray =   obj.getJSONArray("results");
+           for(int i = 0;i<jsonArray.length();i++){
+               Result result = new Result();
+               result.setName(jsonArray.getJSONObject(i).getString("name"));
+               result.setUrl(jsonArray.getJSONObject(i).getString("url"));
+               results.add(result);
+           }
+
+         } catch (JSONException e) {
+             e.printStackTrace();
+         }
+         return results;
      }
 
     private static Pokemon resultFromJsonResponse(String jsonResponse) {

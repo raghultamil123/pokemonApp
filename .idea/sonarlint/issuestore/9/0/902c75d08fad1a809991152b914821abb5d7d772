@@ -1,0 +1,12 @@
+
+Fsquid:S1444"/Make this "public static mActivity" field final(ξ ‚ν
+ƒ"squid:ClassVariableVisibilityCheck"UMake mActivity a static final constant or non-public and provide accessors if needed.(ξ ‚ν
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(²ΥΫ
+Bsquid:S3010"&Remove this assignment of "mActivity".(΅ν ψÿÿÿÿ
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(΅ν ψÿÿÿÿ
+^squid:HiddenFieldCheck5"7Rename "url" which hides the field declared at line 20.(–χªδύÿÿÿÿ
+T
+squid:S106>"9Replace this use of System.out or System.err by a logger.(¦…®θϋÿÿÿÿ
+5squid:S2153@"Remove the boxing to "Double".(πΖΈ®
+Isquid:S1481"-Remove this unused "activity" local variable.(ϊιόÿÿÿÿ
+Csquid:S1068"'Remove this unused "url" private field.(ά‰Ζπωÿÿÿÿ
