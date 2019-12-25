@@ -27,3 +27,9 @@ u
 Eapp/src/main/java/com/example/pokemonapp/Helper/ConnectionHelper.java,f\3\f3629caf05ae7b330d056b8df853223c6da16867
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+w
+Gapp/src/main/java/com/example/pokemonapp/Helper/NotificationHelper.java,b\e\bee27da989cdaecb004319d4e3e55bee4262c387
+{
+Kapp/src/main/java/com/example/pokemonapp/Adapter/PokemonDetailsAdapter.java,b\6\b6e52142b8ed6bc76996502b3d78750ea86b6354
+x
+Happ/src/main/java/com/example/pokemonapp/Adapter/PokemonInfoAdapter.java,0\7\074927e2999f6c58663c2fdd2eb5a46ba2926865

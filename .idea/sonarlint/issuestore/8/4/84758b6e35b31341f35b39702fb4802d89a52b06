@@ -1,6 +1,9 @@
 
+_squid:S1854/"<Remove this useless assignment to local variable "pokemons".(ŞĞüÉøÿÿÿÿ8¼ÕÑñ-
 [
-squid:S106"9Replace this use of System.out or System.err by a logger.(´É†üÿÿÿÿ8¸¨ñ-
-V
-squid:S1063"9Replace this use of System.out or System.err by a logger.(‰¯¶è8 ÀÔ§ñ-
-Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8òß§ñ-
+squid:S106"9Replace this use of System.out or System.err by a logger.(´É†üÿÿÿÿ8¸¨ñ-
+}squid:S14880"_Immediately return this expression instead of assigning it to the temporary variable "results".(× ¦Š8¼ÕÑñ-
+U
+squid:S106"9Replace this use of System.out or System.err by a logger.(àÿ¿M8öü¢Ññ-
+Psquid:S1481/"-Remove this unused "pokemons" local variable.(ŞĞüÉøÿÿÿÿ8¼ÕÑñ-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8òß§ñ-

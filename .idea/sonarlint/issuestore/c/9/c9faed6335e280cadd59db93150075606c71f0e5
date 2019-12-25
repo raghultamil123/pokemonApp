@@ -1,17 +1,17 @@
 
-nsquid:HiddenFieldCheck0"@Rename "notification" which hides the field declared at line 39.(ßÒù½øÿÿÿÿ8è·ë±ï-
-Isquid:S1481U"+Remove this unused "intent" local variable.(òàİÀ8è·ë±ï-
-’"squid:ClassVariableVisibilityCheck'"XMake notification a static final constant or non-public and provide accessors if needed.(Òƒ•şÿÿÿÿ8è·ë±ï-
-Tsquid:S2696,"6Make the enclosing method "static" or remove this set.(ãŠÕÜ8¹ƒ²ï-
-nsquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(ïŞ€¶øÿÿÿÿ8è·ë±ï-
-hsquid:CommentedOutCodeLineV"<This block of commented-out lines of code should be removed.(­Î¦8è·ë±ï-
-Xsquid:S1854U":Remove this useless assignment to local variable "intent".(òàİÀ8è·ë±ï-
-ssquid:CallToDeprecatedMethod;"?Remove this use of "getSupportLoaderManager"; it is deprecated.(Çœ¡ïÿÿÿÿÿ8è·ë±ï-
 ™"squid:ClassVariableVisibilityCheck%"_Make notificationManager a static final constant or non-public and provide accessors if needed.(ÁÍßæÿÿÿÿÿ8è·ë±ï-
-nsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(Ê³—êÿÿÿÿÿ8è·ë±ï-
-csquid:S18540"@Remove this useless assignment to local variable "notification".(ßÒù½øÿÿÿÿ8è·ë±ï-
-lsquid:S1192'"IDefine a constant instead of duplicating this literal "netowork" 4 times.(Òƒ•şÿÿÿÿ8è·ë±ï-
+’"squid:ClassVariableVisibilityCheck'"XMake notification a static final constant or non-public and provide accessors if needed.(Òƒ•şÿÿÿÿ8è·ë±ï-
 Tsquid:S14810"1Remove this unused "notification" local variable.(ßÒù½øÿÿÿÿ8è·ë±ï-
-nsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(´ùã¤ÿÿÿÿÿ8è·ë±ï-
 ”"squid:ClassVariableVisibilityCheck&"_Make notificationChannel a static final constant or non-public and provide accessors if needed.(¦½®Ù8è·ë±ï-
+nsquid:HiddenFieldCheck0"@Rename "notification" which hides the field declared at line 39.(ßÒù½øÿÿÿÿ8è·ë±ï-
+lsquid:S1192'"IDefine a constant instead of duplicating this literal "netowork" 4 times.(Òƒ•şÿÿÿÿ8è·ë±ï-
+csquid:S18540"@Remove this useless assignment to local variable "notification".(ßÒù½øÿÿÿÿ8è·ë±ï-
+hsquid:CommentedOutCodeLineV"<This block of commented-out lines of code should be removed.(­Î¦8è·ë±ï-
+nsquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(Ê³—êÿÿÿÿÿ8è·ë±ï-
+nsquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(ïŞ€¶øÿÿÿÿ8è·ë±ï-
+nsquid:CommentedOutCodeLine9"<This block of commented-out lines of code should be removed.(´ùã¤ÿÿÿÿÿ8è·ë±ï-
+ssquid:CallToDeprecatedMethod;"?Remove this use of "getSupportLoaderManager"; it is deprecated.(Çœ¡ïÿÿÿÿÿ8è·ë±ï-
+Tsquid:S2696,"6Make the enclosing method "static" or remove this set.(ãŠÕÜ8¹ƒ²ï-
+Xsquid:S1854U":Remove this useless assignment to local variable "intent".(òàİÀ8è·ë±ï-
 Ÿsquid:S1186~"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ØâÓÚ8è·ë±ï-
+Isquid:S1481U"+Remove this unused "intent" local variable.(òàİÀ8è·ë±ï-

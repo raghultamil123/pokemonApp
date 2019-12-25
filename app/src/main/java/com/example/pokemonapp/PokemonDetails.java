@@ -3,8 +3,10 @@ package com.example.pokemonapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.pokemonapp.Adapter.PokemonDetailsAdapter;
 import com.example.pokemonapp.DTO.Pokemon;
 
 public class PokemonDetails extends AppCompatActivity {
@@ -23,6 +25,9 @@ public class PokemonDetails extends AppCompatActivity {
         experienceView.setText(pokemon.getBaseExperience().toString());
         TextView heightView = (TextView)findViewById(R.id.pokemon_height);
         heightView.setText(pokemon.getHeight().toString());
+        ListView movesView = findViewById(R.id.moves_view);
+        PokemonDetailsAdapter pokemonDetailsAdapter = new PokemonDetailsAdapter(this,pokemon.getMoves());
+        movesView.setAdapter(pokemonDetailsAdapter);
 
     }
 }

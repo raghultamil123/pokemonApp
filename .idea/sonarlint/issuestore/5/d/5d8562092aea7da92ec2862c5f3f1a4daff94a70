@@ -1,4 +1,5 @@
 
-gsquid:S1301""KReplace this "switch" statement by "if" statements to increase readability.(İõô£ùÿÿÿÿ
 gsquid:S1301."KReplace this "switch" statement by "if" statements to increase readability.(İõô£ùÿÿÿÿ
+}squid:S1488O"ZImmediately return this expression instead of assigning it to the temporary variable "id".(ŒƒÈüûÿÿÿÿ8¤ì•Ññ-
 gsquid:S1301:"KReplace this "switch" statement by "if" statements to increase readability.(İõô£ùÿÿÿÿ
+gsquid:S1301""KReplace this "switch" statement by "if" statements to increase readability.(İõô£ùÿÿÿÿ

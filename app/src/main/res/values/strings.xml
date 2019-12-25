@@ -4,4 +4,6 @@
     <string name="pokemon_detail_name">Name</string>
     <string name="pokemon_search">search</string>
     <string name="pokemon_sync">sync</string>
+    <string name="moves">Moves</string>
+    <string name="search">Search Pokemon</string>
 </resources>
