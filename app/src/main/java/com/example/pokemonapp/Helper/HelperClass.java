@@ -62,7 +62,8 @@ public final class HelperClass {
 
     private static Pokemon resultFromJsonResponse(String jsonResponse) {
           Pokemon pokemon = new Pokemon();
-        List<Result> moves = new ArrayList<>();
+        ArrayList<Result> moves = new ArrayList<>();
+        ArrayList<Result> types = new ArrayList<>();
         try {
             JSONObject jsonObject = new JSONObject(jsonResponse);
             pokemon.setBaseExperience(Integer.valueOf(jsonObject.getInt("base_experience")));
@@ -78,6 +79,17 @@ public final class HelperClass {
             moves.add(result);
             }
            pokemon.setMoves(moves);
+            JSONArray typesArray = jsonObject.getJSONArray("types");
+            for(int i=0;i<typesArray.length();i++){
+                Result result = new Result();
+                JSONObject typeObj = (JSONObject)typesArray.getJSONObject(i).get("type");
+                result.setName(typeObj.getString("name"));
+                result.setUrl(typeObj.getString("url"));
+                types.add(result);
+
+
+            }
+            pokemon.setTypes(types);
         } catch (JSONException e) {
             e.printStackTrace();
         }

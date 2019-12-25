@@ -1,6 +1,7 @@
 package com.example.pokemonapp.DTO;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pokemon implements Serializable {
@@ -9,8 +10,16 @@ public class Pokemon implements Serializable {
     private String name;
     private Integer baseExperience;
     private Integer height;
-    private List<Result> moves;
+    private ArrayList<Result> moves;
+    private ArrayList<Result> types;
 
+    public ArrayList<Result> getTypes() {
+        return types;
+    }
+
+    public void setTypes(ArrayList<Result> types) {
+        this.types = types;
+    }
 
     public Integer getWeight() {
         return weight;
@@ -44,11 +53,11 @@ public class Pokemon implements Serializable {
         this.height = height;
     }
 
-    public List<Result> getMoves() {
+    public ArrayList<Result> getMoves() {
         return moves;
     }
 
-    public void setMoves(List<Result> moves) {
+    public void setMoves(ArrayList<Result> moves) {
         this.moves = moves;
     }
 }

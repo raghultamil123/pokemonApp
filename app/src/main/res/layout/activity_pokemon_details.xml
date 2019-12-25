@@ -89,26 +89,20 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/moves_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16dp"
-        android:layout_below="@id/pokemon_base_detail"
-        android:text="@string/moves"
-        android:textStyle="bold"
-        android:layout_marginLeft="8dp"
-        />
-    <ListView
-        android:id="@+id/moves_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/moves_header"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="8dp"
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tab"
+    android:layout_below="@id/pokemon_base_detail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:tabIndicatorColor="@android:color/holo_green_dark"
+    app:tabSelectedTextColor="@android:color/holo_green_dark"
+    app:tabMode="fixed"
+    app:tabGravity="fill"/>
 
-        />
-
-
+<androidx.viewpager.widget.ViewPager
+    android:id="@+id/view_pager"
+    android:layout_below="@id/tab"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
 
 </RelativeLayout>
