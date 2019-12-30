@@ -1,9 +1,9 @@
 
-]squid:S1118":Add a private constructor to hide the implicit public one.(ÙØÇËúÿÿÿÿ8°öÇÑñ-
-esquid:UselessImportCheck"5Remove this unused import 'com.example.pokemonapp.R'.(œÃşÿÿÿÿ8™¿Ññ-
-?squid:S1148}"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-?squid:S1148\"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
 {squid:S1488'"_Immediately return this expression instead of assigning it to the temporary variable "pokemon".(²øŸõÿÿÿÿÿ
-Vsquid:S4719b":Replace Charset.forName() call with StandardCharsets.UTF_8(Şˆ¤Öúÿÿÿÿ
 ‚squid:S1488"_Immediately return this expression instead of assigning it to the temporary variable "results".(Ö®Ãüÿÿÿÿ8¹ÓÏÑñ-
+]squid:S4719x":Replace Charset.forName() call with StandardCharsets.UTF_8(Şˆ¤Öúÿÿÿÿ8äÑŠßó-
+esquid:UselessImportCheck"5Remove this unused import 'com.example.pokemonapp.R'.(œÃşÿÿÿÿ8™¿Ññ-
 wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤²Èãÿÿÿÿÿ
+Fsquid:S1148r"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8äÑŠßó-
+Gsquid:S1148“"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8äÑŠßó-
+]squid:S1118":Add a private constructor to hide the implicit public one.(ÙØÇËúÿÿÿÿ8°öÇÑñ-

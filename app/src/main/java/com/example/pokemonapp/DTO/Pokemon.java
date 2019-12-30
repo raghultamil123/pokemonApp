@@ -12,6 +12,15 @@ public class Pokemon implements Serializable {
     private Integer height;
     private ArrayList<Result> moves;
     private ArrayList<Result> types;
+    private ArrayList<Result> abilities;
+
+    public ArrayList<Result> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(ArrayList<Result> abilities) {
+        this.abilities = abilities;
+    }
 
     public ArrayList<Result> getTypes() {
         return types;

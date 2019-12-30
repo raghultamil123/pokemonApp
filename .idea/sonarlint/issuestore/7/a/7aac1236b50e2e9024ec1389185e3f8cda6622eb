@@ -1,0 +1,9 @@
+
+’squid:S1319"tThe type of the "abilities" object should be an interface such as "List" rather than the implementation "ArrayList".(¨¡“Ÿ8öÇÖßó-
+squid:S1319A"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(İğˆ•8ûè±Şó-
+“squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(åŞÆåúÿÿÿÿ8§ßó-
+“squid:S1319"pThe type of the "types" object should be an interface such as "List" rather than the implementation "ArrayList".(‘¿İİıÿÿÿÿ8§ßó-
+“squid:S1319E"pThe type of the "moves" object should be an interface such as "List" rather than the implementation "ArrayList".(¹ÿÚòüÿÿÿÿ8Å°Şó-
+[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ûè±Şó-
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¶Åõ—şÿÿÿÿ
+“squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÕÓÿÊúÿÿÿÿ8öÇÖßó-

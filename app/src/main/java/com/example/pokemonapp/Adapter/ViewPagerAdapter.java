@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.pokemonapp.AbilitiesFragment;
 import com.example.pokemonapp.DTO.Pokemon;
 import com.example.pokemonapp.MovesFragment;
 import com.example.pokemonapp.TypesFragment;
@@ -34,12 +35,18 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             typesFragment.setArguments(bundle);
             return typesFragment;
         }
+        if(position==2){
+            bundle.putParcelableArrayList("abilities",pokemon.getAbilities());
+            AbilitiesFragment abilitiesFragment = new AbilitiesFragment();
+            abilitiesFragment.setArguments(bundle);
+            return abilitiesFragment;
+        }
         return new MovesFragment();
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -49,6 +56,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             return "Moves";
         if(position==1)
             return "Types";
+        if(position==2)
+            return "Ability";
         return "enjoy";
     }
 

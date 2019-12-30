@@ -5,23 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
+
     <TextView
         android:id="@+id/search_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:layout_alignParentStart="true"
 
-        android:text="@string/search"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="75dp"
+        android:text="@string/search"
+        android:textSize="24dp" />
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_below="@id/search_header"
         android:layout_width="232dp"
         android:layout_height="48dp"
+        android:layout_below="@id/search_header"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginRight="101dp" />
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginRight="161dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="268dp"
+        android:ems="10"
+        android:text="@string/search">
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <TextView
+        android:id="@+id/search_by_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="215dp"
+        android:text="search by text"
+        android:textSize="24sp" />
 </RelativeLayout>

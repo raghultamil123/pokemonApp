@@ -6,4 +6,5 @@
     <string name="pokemon_sync">sync</string>
     <string name="moves">Moves</string>
     <string name="search">Search Pokemon</string>
+    <string name="welcome_note">Welcome to</string>
 </resources>

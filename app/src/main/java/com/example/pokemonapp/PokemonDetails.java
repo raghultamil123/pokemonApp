@@ -24,7 +24,7 @@ public class PokemonDetails extends AppCompatActivity {
         nameView.setText(pokemon.getName());
         TextView weightView = (TextView)findViewById(R.id.pokemon_weight);
         weightView.setText(pokemon.getWeight().toString());
-        System.out.println("Types imp"+pokemon.getTypes().size());
+
         TextView experienceView = (TextView)findViewById(R.id.pokemon_base_experience);
         experienceView.setText(pokemon.getBaseExperience().toString());
         TextView heightView = (TextView)findViewById(R.id.pokemon_height);
