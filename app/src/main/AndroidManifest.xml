@@ -17,9 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SearchActivity" />
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".PokemonDetails" />
-        <activity android:name=".PokemonInfo" />
+        <activity android:name=".PokemonInfo"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
 
         </activity>

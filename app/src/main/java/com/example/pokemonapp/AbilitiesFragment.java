@@ -23,7 +23,7 @@ public class AbilitiesFragment extends Fragment {
         View view  = inflater.inflate(R.layout.fragment_list,container,false);
         ListView listView  = view.findViewById(R.id.listing);
         List<Result> abilitiesResult =  getArguments().getParcelableArrayList("abilities");
-        PokemonDetailsAdapter adapter = new PokemonDetailsAdapter(getActivity(),abilitiesResult);
+        PokemonDetailsAdapter adapter = new PokemonDetailsAdapter(getActivity(),abilitiesResult,false);
         listView.setAdapter(adapter);
         return view;
     }

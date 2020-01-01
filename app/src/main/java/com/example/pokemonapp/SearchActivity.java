@@ -2,7 +2,9 @@ package com.example.pokemonapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
@@ -10,6 +12,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -19,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.pokemonapp.Adapter.DropDownAdapter;
 import com.example.pokemonapp.DTO.DropDown;
@@ -46,6 +50,10 @@ public class SearchActivity extends AppCompatActivity implements LoaderManager.L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         setTitle("Search");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setBackgroundDrawable(new ColorDrawable(ContextCompat.getColor(this,R.color.orange)));
+
 
         spinner = findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

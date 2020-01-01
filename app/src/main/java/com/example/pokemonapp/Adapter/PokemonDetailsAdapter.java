@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.example.pokemonapp.DTO.Result;
 import com.example.pokemonapp.R;
@@ -18,9 +19,11 @@ import java.util.List;
 
 public class PokemonDetailsAdapter extends ArrayAdapter {
     List<Result> entity = new ArrayList<>();
-    public PokemonDetailsAdapter(@NonNull Context context,List<Result> data) {
+    boolean isType;
+    public PokemonDetailsAdapter(@NonNull Context context,List<Result> data,boolean isType) {
         super(context, 0,data);
         entity = data;
+        this.isType = isType;
 
     }
 
@@ -34,7 +37,22 @@ public class PokemonDetailsAdapter extends ArrayAdapter {
         Result currentResult = entity.get(position);
         TextView move = listView.findViewById(R.id.move);
         move.setText(currentResult.getName());
+        if(isType)
+            move.setTextColor(ContextCompat.getColor(getContext(),getColor(currentResult.getName())));
         return listView;
+
+    }
+    public static int getColor(String type){
+        if(type.isEmpty()||type==null)
+            return R.color.colorAccent;
+        switch(type){
+            case "water":return R.color.blue;
+            case "fire":return R.color.red;
+            case "bug":return R.color.green;
+            case "poison":return R.color.purple;
+            case "flying":return R.color.orange;
+            default:return R.color.black;
+        }
 
     }
 }

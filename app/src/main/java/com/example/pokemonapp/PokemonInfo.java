@@ -7,6 +7,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
+import android.app.ActionBar;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -41,6 +42,7 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pokemon_info);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         PokemonLoader.mActivity = new WeakReference<PokemonInfo>(this);
         pokemons = new ArrayList<>();
         pokemonInfoAdapter = new PokemonInfoAdapter(this,pokemons);
@@ -126,5 +128,6 @@ public class PokemonInfo extends AppCompatActivity implements LoaderManager.Load
     public void onLoaderReset(@NonNull Loader<List<Pokemon>> loader) {
 
     }
+
 
 }

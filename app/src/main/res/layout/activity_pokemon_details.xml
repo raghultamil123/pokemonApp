@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PokemonDetails">
+    tools:context=".PokemonDetails"
+    android:background="@color/orange">
     <TextView
         android:id="@+id/name_header"
         android:layout_width="match_parent"
@@ -26,7 +27,6 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@id/pokemon_name"
-        android:background="@android:color/holo_green_dark"
         android:orientation="horizontal">
         <LinearLayout
             android:layout_width="0dp"

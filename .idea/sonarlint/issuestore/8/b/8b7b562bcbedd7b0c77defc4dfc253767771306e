@@ -1,8 +1,12 @@
 
-squid:S1186;"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ
-hsquid:UselessImportCheck"8Remove this unused import 'android.widget.ArrayAdapter'.( €ŠÑÿÿÿÿÿ8ÓòËÚô-
-squid:S1186_"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒİ¹éÿÿÿÿÿ
-esquid:UselessImportCheck	":Remove this unused import 'android.content.ContentValues'.(å’µŞ8º‘şßó-
-gsquid:CallToDeprecatedMethod5"?Remove this use of "getSupportLoaderManager"; it is deprecated.(‡Áå¹
 [
-squid:S106@"9Replace this use of System.out or System.err by a logger.(·±¨¨ùÿÿÿÿ8£Ã²¨ñ-
+squid:S106P"9Replace this use of System.out or System.err by a logger.(·±¨¨ùÿÿÿÿ8¡Ãø¾õ-
+asquid:UselessImportCheck"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8»‘Ú¾õ-
+¥squid:S1186€"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒİ¹éÿÿÿÿÿ8¡Ãø¾õ-
+[
+squid:S106k"9Replace this use of System.out or System.err by a logger.(¿Œ»ùÿÿÿÿ8¡Ãø¾õ-
+jsquid:S11929"GDefine a constant instead of duplicating this literal "search" 3 times.(›Úşüÿÿÿÿ8™óŞ¾õ-
+gsquid:CallToDeprecatedMethod<"?Remove this use of "getSupportLoaderManager"; it is deprecated.(‡Áå¹
+esquid:UselessImportCheck	":Remove this unused import 'android.content.ContentValues'.(å’µŞ8º‘şßó-
+squid:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ
+nsquid:CallToDeprecatedMethodh"?Remove this use of "getSupportLoaderManager"; it is deprecated.(‡Áå¹8¡Ãø¾õ-

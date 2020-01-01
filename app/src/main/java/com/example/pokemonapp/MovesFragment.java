@@ -24,7 +24,7 @@ public class MovesFragment extends Fragment {
         ListView listView = view.findViewById(R.id.listing);
 
        List<Result> moves = getArguments().getParcelableArrayList("moves");
-        PokemonDetailsAdapter adapter = new PokemonDetailsAdapter(getActivity(),moves);
+        PokemonDetailsAdapter adapter = new PokemonDetailsAdapter(getActivity(),moves,false);
         listView.setAdapter(adapter);
         return view;
     }

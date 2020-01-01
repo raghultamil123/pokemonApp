@@ -55,4 +55,7 @@
         android:layout_marginTop="215dp"
         android:text="search by text"
         android:textSize="24sp" />
+
+
+
 </RelativeLayout>

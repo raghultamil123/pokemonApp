@@ -24,7 +24,7 @@ public class TypesFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list,container,false);
         ListView listView = view.findViewById(R.id.listing);
         List<Result> types = getArguments().getParcelableArrayList("types");
-        PokemonDetailsAdapter adapter = new PokemonDetailsAdapter(getActivity(),types);
+        PokemonDetailsAdapter adapter = new PokemonDetailsAdapter(getActivity(),types,true);
         listView.setAdapter(adapter);
         return view;
     }
